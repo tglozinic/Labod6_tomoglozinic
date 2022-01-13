@@ -16,5 +16,18 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
         }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+
+            Login login = new Login();
+            login.Show(this);
+        }
     }
 }

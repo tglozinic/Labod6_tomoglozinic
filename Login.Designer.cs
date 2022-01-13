@@ -29,27 +29,27 @@ namespace WindowsFormsApp2
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(114, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 0;
+            this.textBoxUsername.Location = new System.Drawing.Point(114, 41);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(100, 22);
+            this.textBoxUsername.TabIndex = 0;
             // 
-            // textBox2
+            // textBoxPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(114, 69);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 1;
+            this.textBoxPassword.Location = new System.Drawing.Point(114, 69);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(100, 22);
+            this.textBoxPassword.TabIndex = 1;
             // 
             // label1
             // 
@@ -78,9 +78,11 @@ namespace WindowsFormsApp2
             this.buttonLogin.TabIndex = 4;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // buttonCancel
             // 
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Location = new System.Drawing.Point(169, 146);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 32);
@@ -90,17 +92,24 @@ namespace WindowsFormsApp2
             // 
             // Login
             // 
+            this.AcceptButton = this.buttonLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(303, 216);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxPassword);
+            this.Controls.Add(this.textBoxUsername);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Login";
-            this.Text = "Login";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "User Login";
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -109,8 +118,8 @@ namespace WindowsFormsApp2
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxUsername;
+        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonLogin;
